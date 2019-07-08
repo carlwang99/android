@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical"
+    tools:context=".Exercise1Activity">
+
+    <ImageView
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:src="@drawable/bg" />
+
+    <TextView
+        android:id="@+id/hw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="浙江大学"
+        android:textSize="19dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#001200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--放用户名图标和输入框-->
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_marginTop="19dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginLeft="19dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/un"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:background="#ffffff"
+            android:layout_gravity="center"
+            android:layout_marginLeft="9dp"
+            />
+
+    </LinearLayout>
+
+    <!--放密码图标和输入框-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="19dp"
+            android:src="@drawable/pw" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="9dp"
+            android:background="#ffffff"
+            android:inputType="textPassword"
+            android:hint="请输入密码" />
+
+        <TextView
+            android:id="@+id/forget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="right"
+            android:paddingEnd="20dp"
+            android:text="| 忘记密码"
+            android:textColor="#aaaaaa"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="19dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="60dp"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/c1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记住密码"
+            android:layout_weight="1"
+            />
+
+        <CheckBox
+            android:id="@+id/c2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自动登录" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/login"
+        android:layout_marginTop="30dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/radius"
+        android:text="登录"
+        android:textColor="#ffffff"
+        />
+
+    <ProgressBar
+        android:id="@+id/loginPro"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        />
+</LinearLayout>
