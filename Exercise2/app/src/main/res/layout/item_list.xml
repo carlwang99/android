@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#161823"
+    android:layout_margin="10dp"
+    >
+    <TextView
+        android:id="@+id/itemID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1."
+        android:textSize="15sp"
+        android:textColor="#e6face15"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="13sp"
+        />
+
+    <TextView
+        android:id="@+id/titleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#e6ffffff"
+        android:text="敬礼我的超级英雄"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/itemID"
+        android:layout_marginLeft="15sp"
+        />
+
+    <TextView
+        android:id="@+id/hotValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="548583"
+        android:textColor="#7fffffff"
+        android:layout_marginLeft="13dp"
+        />
+
+</RelativeLayout>
