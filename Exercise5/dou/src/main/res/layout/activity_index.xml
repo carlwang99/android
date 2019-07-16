@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndexActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#010102"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tabIndex"
+            android:textSize="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="首页"
+            android:gravity="center"
+            android:textColor="#99999a"
+            />
+        <TextView
+            android:id="@+id/tabFocus"
+            android:textSize="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="关注"
+            android:gravity="center"
+            android:textColor="#99999a"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.7"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/addbtn" />
+        <TextView
+            android:id="@+id/tabMsg"
+            android:textSize="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="消息"
+            android:gravity="center"
+            android:textColor="#99999a"
+            />
+        <TextView
+            android:id="@+id/tabMe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:text="我"
+            android:gravity="center"
+            android:textColor="#99999a"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>
