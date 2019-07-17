@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bytedance.androidcamp.network.dou.minterface.HeartRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VideoActivity"
+    app:heart_degrees_interval_min="-20"
+    app:heart_degrees_interval_max="20"
+    app:heart_swipe_image="@drawable/ic_heart"
+    android:background="#000000"
+    android:id="@+id/HeartRelative"
+    >
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:textColor="#99ffffff"
+        android:textSize="19dp"
+        android:layout_alignParentRight="true"
+        android:text="刷新"/>
+    <VideoView android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="#CC04FF"
+        android:indeterminateTintMode="src_atop"
+        />
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/ic_play"
+        android:background="#00000000"
+        android:visibility="invisible"
+        />
+    <com.bytedance.androidcamp.network.dou.minterface.HeartRelativeLayout
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="50dp"
+        android:layout_height="250dp">
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_like1"
+            android:textColor="#00000000"
+            />
+        <TextView
+            android:id="@+id/txt_like"
+            android:layout_below="@+id/btn_like"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:text="66666"/>
+
+        <Button
+            android:id="@+id/btn_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/txt_like"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_comment1" />
+        <TextView
+            android:id="@+id/txt_comment"
+            android:layout_below="@+id/btn_comment"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:text="评论"/>
+
+        <Button
+            android:id="@+id/btn_share"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/txt_comment"
+            android:background="#00000000"
+            android:drawableTop="@drawable/ic_share" />
+        <TextView
+            android:id="@+id/txt_share"
+            android:layout_below="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:text="分享"/>
+    </com.bytedance.androidcamp.network.dou.minterface.HeartRelativeLayout>
+
+</com.bytedance.androidcamp.network.dou.minterface.HeartRelativeLayout>

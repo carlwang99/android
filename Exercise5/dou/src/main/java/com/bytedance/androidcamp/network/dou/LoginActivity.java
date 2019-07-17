@@ -1,5 +1,6 @@
 package com.bytedance.androidcamp.network.dou;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -183,6 +184,22 @@ public class LoginActivity extends AppCompatActivity {
                 fetchVCode.setClickable(false);
                 ticks = 60;
                 mHandler.post(tickRunnable);
+            }
+        });
+
+        //登录按钮
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(vCode.getText().toString().length() != 6){
+                    Toast.makeText(LoginActivity.this, "验证码错误", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent();
+                    intent.putExtra("resultCode", "登录成功");
+                    setResult(1, intent);
+                    finish();
+                }
             }
         });
     }

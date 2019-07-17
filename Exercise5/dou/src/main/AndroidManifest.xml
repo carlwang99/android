@@ -17,17 +17,22 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/AppThemeDialogIsTranslucent"></activity>
-        <activity android:name=".IndexActivity">
+        <activity
+            android:name=".CoverActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".PostActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppThemeDialogIsTranslucent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".IndexActivity">
+        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".VideoActivity" />
     </application>
 

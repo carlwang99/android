@@ -8,4 +8,5 @@
     <string name="posting">上传中...</string>
     <string name="refresh_feed">刷新</string>
     <string name="success_try_refresh">上传成功！刷新看看吧~</string>
+    <string name="title_activity_cover">CoverActivity</string>
 </resources>
