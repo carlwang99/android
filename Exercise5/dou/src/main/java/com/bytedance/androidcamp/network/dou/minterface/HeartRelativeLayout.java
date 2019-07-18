@@ -1,6 +1,7 @@
 package com.bytedance.androidcamp.network.dou.minterface;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -11,16 +12,23 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.MonthDisplayHelper;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
 import android.widget.Button;
 
 import com.bytedance.androidcamp.network.dou.R;
+import com.bytedance.androidcamp.network.dou.VideoActivity;
+import com.bytedance.androidcamp.network.dou.fragment.IndexFragmentL;
+import com.bytedance.androidcamp.network.dou.fragment.MarqueeTextView;
 import com.bytedance.androidcamp.network.dou.model.Video;
 
 import java.nio.channels.MulticastChannel;
@@ -48,6 +56,8 @@ public class HeartRelativeLayout extends RelativeLayout {
     long singleClickTime;//记录第一次点击的时间
     long lastClickTime = 0;
     boolean isShake = true;//是否需要抖动效果 默认抖动
+    private Animation loadHeartAnimation;
+    private ImageView iv_heart;
     @SuppressWarnings("HandlerLeak")
 
     class MyHandler extends Handler {
@@ -70,9 +80,17 @@ public class HeartRelativeLayout extends RelativeLayout {
                     if (video.isPlaying()) {
                         video.pause();
                         btn_play.setVisibility(View.VISIBLE);
+                        if(IndexFragmentL.marqueeTextView!=null)
+                        IndexFragmentL.marqueeTextView.stopScroll();
+                        if(VideoActivity.marqueeTextView!=null)
+                            VideoActivity.marqueeTextView.stopScroll();
                     } else {
                         video.start();
                         btn_play.setVisibility(View.INVISIBLE);
+                        if(IndexFragmentL.marqueeTextView!=null)
+                            IndexFragmentL.marqueeTextView.startScroll();
+                        if(VideoActivity.marqueeTextView!=null)
+                            VideoActivity.marqueeTextView.stopScroll();
                     }
                     if(onClickListener!=null)
                         onClickListener.onClick(lastClickView);
@@ -104,6 +122,13 @@ public class HeartRelativeLayout extends RelativeLayout {
                 if ((curClickTime - lastClickTime) < DOUBLIE_GAP_TIME) {
                     handlerClick.removeCallbacksAndMessages(null);
                     startSwipe(lastMotionEvent);
+                    if(args.isHeart==false){
+                        args.isHeart=true;
+                        iv_heart = ((Activity)getContext()).findViewById(R.id.btn_like);
+                        iv_heart.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
+                        loadHeartAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.heart_animation);
+                        iv_heart.startAnimation(loadHeartAnimation);
+                    }
                     if(mDoubleClickListener!=null){
                         mDoubleClickListener.onDoubleClick(HeartRelativeLayout.this);
                     }

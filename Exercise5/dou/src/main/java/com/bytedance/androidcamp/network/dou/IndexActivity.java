@@ -11,10 +11,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.bytedance.androidcamp.network.dou.fragment.FocusFragment;
 import com.bytedance.androidcamp.network.dou.fragment.IndexFragmentL;
@@ -47,6 +49,15 @@ public class IndexActivity extends AppCompatActivity {
     final int textDarkColor = Color.parseColor("#99999a");
     private int currentFocus = 0;
     private int currentTabTop = 0;
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        VideoView videoView = indexFragmentL.getActivity().findViewById(R.id.video_container);
+        videoView.pause();
+        Button button = indexFragmentL.getActivity().findViewById(R.id.btn_play);
+        button.setVisibility(View.VISIBLE);
+    }
 
     //自定义按钮点击监听器，可接收tab按钮id
     class BtnOnclickListener implements View.OnClickListener{

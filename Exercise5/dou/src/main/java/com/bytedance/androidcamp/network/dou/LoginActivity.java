@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         Transition slide = TransitionInflater.from(this).inflateTransition(R.transition.slide);
         setContentView(R.layout.activity_login);
+
         initView();
         Window win = this.getWindow();
         win.setEnterTransition(slide);

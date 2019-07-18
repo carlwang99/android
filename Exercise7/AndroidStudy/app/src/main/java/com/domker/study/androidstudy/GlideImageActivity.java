@@ -48,11 +48,13 @@ public class GlideImageActivity extends AppCompatActivity {
 
     private void addImage(String path) {
         ImageView imageView = (ImageView) layoutInflater.inflate(R.layout.activity_image_item, null);
+
         Glide.with(this)
                 .load(path)
                 .apply(new RequestOptions().circleCrop().diskCacheStrategy(DiskCacheStrategy.ALL))
                 .error(R.drawable.error)
                 .into(imageView);
+
         pages.add(imageView);
     }
 }
