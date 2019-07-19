@@ -1,5 +1,6 @@
 package com.bytedance.camera.demo;
 
+import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,7 +23,9 @@ public class TakePictureActivity extends AppCompatActivity {
     private static final int REQUEST_EXTERNAL_STORAGE = 101;
     private File imageFile;
     String[] permissions = new String[] {
-
+            Manifest.permission.CAMERA,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.RECORD_AUDIO
     };
 
     @Override
