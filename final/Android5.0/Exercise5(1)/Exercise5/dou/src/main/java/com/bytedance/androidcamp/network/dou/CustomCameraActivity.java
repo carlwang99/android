@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bytedance.androidcamp.network.dou.minterface.args;
@@ -49,6 +50,9 @@ public class CustomCameraActivity extends AppCompatActivity {
     private String imageOutputFile;
     private File pictureFile;
     private ImageView imageViewCircle;
+    private LinearLayout toolBar;
+    private LinearLayout tool1;
+    private LinearLayout tool2;
     private int CAMERA_TYPE = Camera.CameraInfo.CAMERA_FACING_BACK;
     private int CAMERA_FRONT = Camera.CameraInfo.CAMERA_FACING_FRONT;
     private boolean isRecording = false;
@@ -72,6 +76,9 @@ public class CustomCameraActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_custom_camera);
 
+        toolBar = findViewById(R.id.toolBar);
+        tool1 = findViewById(R.id.tool1);
+        tool2 = findViewById(R.id.tool2);
         mCamera = getCamera(CAMERA_TYPE);
         mSurfaceView = findViewById(R.id.img);
         imageViewCircle = findViewById(R.id.iv_outCircle);
@@ -141,6 +148,9 @@ public class CustomCameraActivity extends AppCompatActivity {
 
                 if (isRecording) {
                     //todo 停止录制
+                    toolBar.setVisibility(View.VISIBLE);
+                    tool1.setVisibility(View.VISIBLE);
+                    tool2.setVisibility(View.VISIBLE);
                     CustomCameraActivity.this.videoStartPreview();
                     CustomCameraActivity.this.releaseMediaRecorder();
                     isRecording = false;
@@ -149,6 +159,9 @@ public class CustomCameraActivity extends AppCompatActivity {
                     objectAnimatorAlpha.pause();
                 } else {
                     //todo 录制
+                    toolBar.setVisibility(View.INVISIBLE);
+                    tool1.setVisibility(View.INVISIBLE);
+                    tool2.setVisibility(View.INVISIBLE);
                     if (CustomCameraActivity.this.prepareVideoRecorder())
                         isRecording = true;
                     if (drawable.isRunning()) {

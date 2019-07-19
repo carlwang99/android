@@ -17,6 +17,7 @@
         android:layout_alignParentBottom="true"
         >
         <LinearLayout
+            android:id="@+id/tool1"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:layout_width="wrap_content"
@@ -59,6 +60,7 @@
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/tool2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -85,6 +87,7 @@
 
 
     <LinearLayout
+        android:id="@+id/toolBar"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -112,11 +115,11 @@
 
         <ImageView
             android:id="@+id/iv_speed"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="33dp"
+            android:layout_height="26dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_speed"/>
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_speed" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
