@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bytedance.androidcamp.network.dou">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission  android:name = "android.permission.GET_TASKS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".VideoPreviewActivity"/>
+        <activity android:name=".PostActivity" />
+        <activity android:name=".CustomCameraActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:theme="@style/AppThemeReviewDialog"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CoverActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppThemeDialogIsTranslucent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".IndexActivity" />
+        <activity android:name=".VideoActivity" />
+    </application>
+
+</manifest>

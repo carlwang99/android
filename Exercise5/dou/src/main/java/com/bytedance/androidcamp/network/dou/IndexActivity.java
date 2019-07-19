@@ -23,6 +23,7 @@ import com.bytedance.androidcamp.network.dou.fragment.IndexFragmentL;
 import com.bytedance.androidcamp.network.dou.fragment.IndexFragmentR;
 import com.bytedance.androidcamp.network.dou.fragment.MeFragment;
 import com.bytedance.androidcamp.network.dou.fragment.MsgFragment;
+import com.bytedance.androidcamp.network.dou.minterface.args;
 
 public class IndexActivity extends AppCompatActivity {
     //tabBar的两种主题（黑/透明）
@@ -41,7 +42,6 @@ public class IndexActivity extends AppCompatActivity {
     private IndexFragmentR indexFragmentR = null;
     private MeFragment meFragment = null;
     private MsgFragment msgFragment = null;
-    private boolean loginState = false; //记录登录状态
     final int focusedColor = Color.parseColor("#ffffff");
 
     //区分首页和其它页面未选中文字的颜色
@@ -51,12 +51,14 @@ public class IndexActivity extends AppCompatActivity {
     private int currentTabTop = 0;
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        VideoView videoView = indexFragmentL.getActivity().findViewById(R.id.video_container);
-        videoView.pause();
-        Button button = indexFragmentL.getActivity().findViewById(R.id.btn_play);
-        button.setVisibility(View.VISIBLE);
+    protected void onStop() {
+        super.onStop();
+        if(indexFragmentL.getActivity()!=null){
+            VideoView videoView = indexFragmentL.getActivity().findViewById(R.id.video_container);
+            videoView.pause();
+            Button button = indexFragmentL.getActivity().findViewById(R.id.btn_play);
+            button.setVisibility(View.VISIBLE);
+        }
     }
 
     //自定义按钮点击监听器，可接收tab按钮id
@@ -67,7 +69,7 @@ public class IndexActivity extends AppCompatActivity {
         }
         @Override
         public void onClick(View v) {
-            if(tabBtnId != 0 && loginState == false){
+            if(tabBtnId != 0 && args.loginState == false){
                 Intent intent = new Intent(IndexActivity.this,LoginActivity.class);
                 //播放动画
                 startActivityForResult(intent, 1, ActivityOptions.makeSceneTransitionAnimation(IndexActivity.this).toBundle());
@@ -150,12 +152,21 @@ public class IndexActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        if(args.hasDraft == true){
+            args.loginState = true;
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //与startActivityForResult中的requestCode对应
         if(requestCode == 1){
             switch (resultCode){
-                case 1: loginState = true;
+                case 1:
+                    args.loginState = true;
                         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
                         break;
                         default:break;
@@ -204,15 +215,22 @@ public class IndexActivity extends AppCompatActivity {
         postVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(loginState==false){
+                if(args.loginState==false){
                     Intent intent = new Intent(IndexActivity.this,LoginActivity.class);
                     //播放动画
                     startActivityForResult(intent, 1, ActivityOptions.makeSceneTransitionAnimation(IndexActivity.this).toBundle());
                     return;
                 }
                 else{
-                    Intent intent = new Intent(IndexActivity.this,PostActivity.class);
-                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(IndexActivity.this).toBundle());
+                    if(!args.hasDraft){
+                        Intent intent = new Intent(IndexActivity.this,CustomCameraActivity.class);
+                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(IndexActivity.this).toBundle());
+
+                    }
+                    else{
+                        Intent intent = new Intent(IndexActivity.this,PostActivity.class);
+                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(IndexActivity.this).toBundle());
+                    }
                     return;
                 }
             }

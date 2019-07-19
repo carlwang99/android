@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <SurfaceView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        >
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_tool"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_tool"
+                android:layout_gravity="center"
+                android:background="#00000000"/>
+
+            <TextView
+                android:id="@+id/txt_tool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="道具"
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_record"
+                android:layout_width="110dp"
+                android:background="#00000000"
+                android:layout_height="120dp"
+                android:src="@drawable/record_animation"  />
+            <ImageView
+                android:id="@+id/iv_outCircle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/circle_view"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_album"
+                android:layout_width="50dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:src="@drawable/ic_album" />
+            <TextView
+                android:id="@+id/txt_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="相册"
+                android:textColor="#ffffff"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_facing"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_facing"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="翻转"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:id="@+id/iv_speed"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_speed"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="速度开"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:id="@+id/iv_filter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_filter"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="滤镜"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:id="@+id/iv_beautify"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_beautify"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="美化"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:id="@+id/iv_delay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_delay"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="倒计时"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+        <ImageView
+            android:id="@+id/iv_light"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_light"/>
+        <TextView
+            android:id="@+id/tv_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="闪光灯"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+android:name="smile"
+android:width="80dp"
+android:height="80dp"
+android:viewportHeight="220"
+android:viewportWidth="220">
+
+<path
+    android:name="square"
+    android:fillColor="#fe2c55"
+    android:pathData="m 80.0,69.0 h 60.0 c 5.52,0.0,10.0,4.48,10.0,10.0 v 60.0 c 0.0,5.52,-4.48,10.0,-10.0,10.0 h -60.0 c -5.52,0.0,-10.0,-4.48,-10.0,-10.0 v -60.0 c 0.0,-5.52,4.48,-10.0,10.0,-10.0 L 80.0,69.0z" />
+   </vector>

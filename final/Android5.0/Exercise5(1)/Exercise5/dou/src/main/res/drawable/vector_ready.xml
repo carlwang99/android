@@ -1,0 +1,14 @@
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="smile"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportHeight="220"
+    android:viewportWidth="220">
+
+    <path
+        android:name="inner_circle"
+        android:fillColor="#fe2c55"
+        android:pathData="m 109.0,27.0 h 0.0 c 45.29,0.0,82.0,36.71,82.0,82.0 v 0.0 c 0.0,45.29,-36.71,82.0,-82.0,82.0 h 0.0 c -45.29,0.0,-82.0,-36.71,-82.0,-82.0 v 0.0 c 0.0,-45.29,36.71,-82.0,82.0,-82.0 L 109.0,27.0z" />
+
+</vector>

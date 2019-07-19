@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_below="@id/itemNum"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/head_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/icon_head" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/head_icon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/head_icon"
+        android:text="抱走千玺"
+        android:textColor="#8a8b91"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nickname"
+        android:layout_alignLeft="@id/nickname"
+        android:layout_marginTop="5dp"
+        android:text="完了完了磕掉牙了😄\n二哈能健康成长简直是个奇迹"
+        android:textColor="#000000"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/head_icon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_like" />
+
+        <TextView
+            android:id="@+id/starNum"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/star"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:text="2179"
+            android:textColor="#000000"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

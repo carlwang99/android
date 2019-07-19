@@ -90,7 +90,7 @@ public class HeartRelativeLayout extends RelativeLayout {
                         if(IndexFragmentL.marqueeTextView!=null)
                             IndexFragmentL.marqueeTextView.startScroll();
                         if(VideoActivity.marqueeTextView!=null)
-                            VideoActivity.marqueeTextView.stopScroll();
+                            VideoActivity.marqueeTextView.startScroll();
                     }
                     if(onClickListener!=null)
                         onClickListener.onClick(lastClickView);
@@ -122,13 +122,23 @@ public class HeartRelativeLayout extends RelativeLayout {
                 if ((curClickTime - lastClickTime) < DOUBLIE_GAP_TIME) {
                     handlerClick.removeCallbacksAndMessages(null);
                     startSwipe(lastMotionEvent);
-                    if(args.isHeart==false){
+                    if(args.isInner){
+                        if(args.isInnerHeart == false){
+                            args.isInnerHeart=true;
+                            iv_heart = ((Activity)getContext()).findViewById(R.id.btn_like);
+                            iv_heart.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
+                            loadHeartAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.heart_animation);
+                            iv_heart.startAnimation(loadHeartAnimation);
+                        }
+                    }
+                    else if(args.isHeart == false){
                         args.isHeart=true;
                         iv_heart = ((Activity)getContext()).findViewById(R.id.btn_like);
                         iv_heart.setImageDrawable(getResources().getDrawable(R.drawable.ic_heart));
                         loadHeartAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.heart_animation);
                         iv_heart.startAnimation(loadHeartAnimation);
                     }
+
                     if(mDoubleClickListener!=null){
                         mDoubleClickListener.onDoubleClick(HeartRelativeLayout.this);
                     }

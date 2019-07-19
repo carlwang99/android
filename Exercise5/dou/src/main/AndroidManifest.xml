@@ -3,24 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bytedance.androidcamp.network.dou">
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 如果仍然有权限问题，手动去设置里面开启权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission  android:name = "android.permission.GET_TASKS"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ReviewActivity"
+        <activity android:name=".VideoPreviewActivity"/>
+        <activity android:name=".PostActivity" />
+        <activity android:name=".CustomCameraActivity" />
+        <activity
+            android:name=".ReviewActivity"
             android:theme="@style/AppThemeReviewDialog"
-            android:windowSoftInputMode="adjustResize"
-            />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".CoverActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -30,7 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PostActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppThemeDialogIsTranslucent"
